@@ -20,6 +20,8 @@
         <activity android:name=".SelectSituationActivity"/>
         <activity android:name=".SinkEnterActivity"/>
         <activity android:name=".VoidEnterActivity"/>
+        <activity android:name=".ResultActivity"/>
+        <activity android:name=".VoidGradeActivity"/>
     </application>
 
 </manifest>
