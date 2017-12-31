@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LabProject</string>
+
+    <string-array name="stream">
+        <item>흐른다</item>
+        <item>안흐른다</item>
+    </string-array>
 </resources>

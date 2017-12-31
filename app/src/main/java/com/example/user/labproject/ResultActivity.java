@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -13,32 +15,105 @@ import org.w3c.dom.Text;
  */
 
 public class ResultActivity extends Activity {
-    TextView pouchNum, location, injectNum, injectVelocity, time_hour, time_min;
+    TextView txt_pouchNum, txt_location, txt_injectNum, txt_injectVelocity, txt_time_hour, txt_time_min;
+    ImageView img_location, back;
     double volume;
+    double pouchNum;
     double height, width, length;
+    int time_hour;
+    double time_min;
+    String stream;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        pouchNum = (TextView)findViewById(R.id.pouchNum);
-        location = (TextView)findViewById(R.id.location);
-        injectNum = (TextView)findViewById(R.id.injectNum);
-        injectVelocity = (TextView)findViewById(R.id.injectVelocity);
-        time_hour = (TextView)findViewById(R.id.time_hour);
-        time_min = (TextView)findViewById(R.id.time_min);
+        txt_pouchNum = (TextView)findViewById(R.id.pouchNum);
+        txt_location = (TextView)findViewById(R.id.location);
+        txt_injectNum = (TextView)findViewById(R.id.injectNum);
+        txt_injectVelocity = (TextView)findViewById(R.id.injectVelocity);
+        txt_time_hour = (TextView)findViewById(R.id.time_hour);
+        txt_time_min = (TextView)findViewById(R.id.time_min);
+
+        img_location = (ImageView)findViewById(R.id.img_location);
+        back = (ImageView)findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         Intent intent = getIntent();
-        height = intent.getDoubleExtra("Height", 0.0);
-        width = intent.getDoubleExtra("Width", 0.0);
-        length = intent.getDoubleExtra("Length", 0.0);
 
-        volume = getVolume(height,width,length);
+        if(intent.getStringExtra("WhereWereYou").equals("sink")) {
+            height = intent.getDoubleExtra("Height", 0.0);
+            width = intent.getDoubleExtra("Width", 0.0);
+            length = intent.getDoubleExtra("Length", 0.0);
 
-        pouchNum.setText(Double.toString(getPouch(volume, 1)));
+            if(height == 0)
+                volume = getVolume(width, length)/2;
+            else
+                volume = getVolume(height, width, length)/2;
+
+            pouchNum = getPouch(volume, 4);
+            time_min = getTime(volume,4);
+
+            time_hour = (int)(time_min/60);
+            time_min = time_min - (60*time_hour);
 
 
+            txt_pouchNum.setText(Double.toString(Math.ceil(pouchNum)));
+            txt_location.setText("없음");
+            txt_injectNum.setText("4");
+            txt_injectVelocity.setText(Double.toString(Math.ceil(pouchNum/(time_min* 60))));
+            txt_time_hour.setText(Double.toString(time_hour));
+            txt_time_min.setText(Double.toString(Math.ceil(time_min)));
+
+            img_location.setVisibility(View.GONE);
+        }
+
+        if(intent.getStringExtra("WhereWereYou").equals("void")) {
+            height = intent.getDoubleExtra("Height", 0.0);
+            width = intent.getDoubleExtra("Width", 0.0);
+            length = intent.getDoubleExtra("Length", 0.0);
+
+            if (height == 0)
+                volume = getVolume(width, length);
+            else
+                volume = getVolume(height, width, length);
+
+            stream = intent.getStringExtra("stream");
+
+            if (stream.equals("흐른다")) {
+                txt_location.setText("가장자리");
+                txt_injectNum.setText("2");
+                pouchNum = getPouch(volume, 2);
+                time_min = getTime(volume, 2);
+            }
+            else{
+                txt_location.setText("중앙");
+                txt_injectNum.setText("4");
+                pouchNum = getPouch(volume, 4);
+                time_min = getTime(volume, 4);
+            }
+
+            time_hour = (int)(time_min/60);
+            time_min = time_min - (60*time_hour);
+
+
+            txt_pouchNum.setText(Double.toString(Math.ceil(pouchNum)));
+            txt_injectVelocity.setText(Double.toString(Math.ceil(pouchNum/(time_min* 60))));
+            txt_time_hour.setText(Double.toString(time_hour));
+            txt_time_min.setText(Double.toString(Math.ceil(time_min)));
+
+            if(txt_location.getText().equals("가장자리"))
+                img_location.setBackgroundResource(R.mipmap.edge);
+            if(txt_location.getText().equals("중앙"))
+                img_location.setBackgroundResource(R.mipmap.center);
+        }
 
 
     }
@@ -56,4 +131,5 @@ public class ResultActivity extends Activity {
     private double getTime(double volume, int injectNum){
         return volume / 0.005 / (double)injectNum;
     }
+
 }

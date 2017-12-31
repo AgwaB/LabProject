@@ -68,7 +68,7 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:layout_gravity="center">
             <ImageView
                 android:layout_width="wrap_content"
@@ -87,6 +87,7 @@
                     android:textSize="15dp"/>
 
                 <TextView
+                    android:id="@+id/grade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"/>
@@ -96,13 +97,13 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:layout_marginBottom="10dp"
             android:layout_gravity="center">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/longshallowbutton" />
+                android:src="@mipmap/longshallowbutton2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -116,7 +117,8 @@
                     android:textSize="15dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/limit"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"/>
             </LinearLayout>

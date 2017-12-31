@@ -53,6 +53,7 @@
                     android:id="@+id/pouchNum"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:textSize="15dp"/>
 
                 <TextView
@@ -86,8 +87,9 @@
 
                 <TextView
                     android:id="@+id/location"
-                    android:layout_width="wrap_content"
+                    android:layout_width="190dp"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:textSize="15dp"/>
             </LinearLayout>
         </FrameLayout>
@@ -117,6 +119,7 @@
                     android:id="@+id/injectNum"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:textSize="15dp"/>
 
 
@@ -152,6 +155,7 @@
                 <TextView
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:text="7"
                     android:textSize="15dp" />
                 <TextView
@@ -187,6 +191,7 @@
                     android:id="@+id/injectVelocity"
                     android:layout_width="145dp"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:textSize="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -218,12 +223,13 @@
                     android:textSize="15dp"/>
 
                 <TextView
+                    android:id="@+id/time_hour"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:textSize="15dp"/>
 
                 <TextView
-                    android:id="@+id/time_hour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="H"
@@ -233,6 +239,7 @@
                     android:id="@+id/time_min"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:textSize="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -243,10 +250,10 @@
         </FrameLayout>
 
         <ImageView
+            android:id="@+id/img_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@mipmap/center"/>
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 
