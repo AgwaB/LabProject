@@ -2,7 +2,10 @@
     <string name="app_name">LabProject</string>
 
     <string-array name="stream">
-        <item>흐른다</item>
-        <item>안흐른다</item>
+        <item>없음</item>
+        <item>방향1</item>
+        <item>방향2</item>
+        <item>방향3</item>
+        <item>방향4</item>
     </string-array>
 </resources>

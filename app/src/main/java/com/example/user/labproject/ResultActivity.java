@@ -65,12 +65,12 @@ public class ResultActivity extends Activity {
             time_min = time_min - (60*time_hour);
 
 
-            txt_pouchNum.setText(Double.toString(Math.ceil(pouchNum)));
+            txt_pouchNum.setText(Integer.toString((int)Math.ceil(pouchNum)));
             txt_location.setText("없음");
             txt_injectNum.setText("4");
-            txt_injectVelocity.setText(Double.toString(Math.ceil(pouchNum/(time_min* 60))));
-            txt_time_hour.setText(Double.toString(time_hour));
-            txt_time_min.setText(Double.toString(Math.ceil(time_min)));
+            txt_injectVelocity.setText(Integer.toString((int)Math.ceil(pouchNum/(time_min* 60))));
+            txt_time_hour.setText(Integer.toString((int)time_hour));
+            txt_time_min.setText(Integer.toString((int)Math.ceil(time_min)));
 
             img_location.setVisibility(View.GONE);
         }
@@ -87,7 +87,7 @@ public class ResultActivity extends Activity {
 
             stream = intent.getStringExtra("stream");
 
-            if (stream.equals("흐른다")) {
+            if (stream.contains("방향")) {
                 txt_location.setText("가장자리");
                 txt_injectNum.setText("2");
                 pouchNum = getPouch(volume, 2);
@@ -104,10 +104,10 @@ public class ResultActivity extends Activity {
             time_min = time_min - (60*time_hour);
 
 
-            txt_pouchNum.setText(Double.toString(Math.ceil(pouchNum)));
-            txt_injectVelocity.setText(Double.toString(Math.ceil(pouchNum/(time_min* 60))));
-            txt_time_hour.setText(Double.toString(time_hour));
-            txt_time_min.setText(Double.toString(Math.ceil(time_min)));
+            txt_pouchNum.setText(Integer.toString((int)Math.ceil(pouchNum)));
+            txt_injectVelocity.setText(Integer.toString((int)Math.ceil(pouchNum/(time_min* 60))));
+            txt_time_hour.setText(Integer.toString((int)time_hour));
+            txt_time_min.setText(Integer.toString((int)Math.ceil(time_min)));
 
             if(txt_location.getText().equals("가장자리"))
                 img_location.setBackgroundResource(R.mipmap.edge);

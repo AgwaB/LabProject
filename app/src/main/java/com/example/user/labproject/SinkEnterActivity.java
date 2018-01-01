@@ -53,14 +53,14 @@ public class SinkEnterActivity extends Activity {
 
                     if (sinkHeight.getText().toString().equals("")){
                         intent.putExtra("Height", 0);
-                        intent.putExtra("Width", Double.parseDouble(sinkWidth.getText().toString()) * 0.01);
-                        intent.putExtra("Length", Double.parseDouble(sinkLength.getText().toString()) * 0.01);
+                        intent.putExtra("Width", Double.parseDouble(sinkWidth.getText().toString()));
+                        intent.putExtra("Length", Double.parseDouble(sinkLength.getText().toString()));
                         startActivity(intent);
                     } else {
                         if(isNumber(sinkHeight.getText().toString())){
-                        intent.putExtra("Height", Double.parseDouble(sinkHeight.getText().toString()) * 0.01);
-                        intent.putExtra("Width", Double.parseDouble(sinkWidth.getText().toString()) * 0.01);
-                        intent.putExtra("Length", Double.parseDouble(sinkLength.getText().toString()) * 0.01);
+                        intent.putExtra("Height", Double.parseDouble(sinkHeight.getText().toString()));
+                        intent.putExtra("Width", Double.parseDouble(sinkWidth.getText().toString()));
+                        intent.putExtra("Length", Double.parseDouble(sinkLength.getText().toString()));
                         startActivity(intent);}
                     }
 
@@ -84,4 +84,5 @@ public class SinkEnterActivity extends Activity {
 
         return result ;
     }
+
     }

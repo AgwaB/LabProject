@@ -73,7 +73,7 @@
 
                 <EditText
                     android:id="@+id/sinkHeight"
-                    android:layout_width="162dp"
+                    android:layout_width="172dp"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:singleLine="true"
@@ -83,7 +83,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="cm"
+                    android:text="m"
                     android:textSize="15dp"/>
             </LinearLayout>
         </FrameLayout>
@@ -111,7 +111,7 @@
 
                 <EditText
                     android:id="@+id/sinkWidth"
-                    android:layout_width="175dp"
+                    android:layout_width="185dp"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:singleLine="true"
@@ -121,7 +121,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="cm"
+                    android:text="m"
                     android:textSize="15dp"/>
             </LinearLayout>
         </FrameLayout>
@@ -149,7 +149,7 @@
 
                 <EditText
                     android:id="@+id/sinkLength"
-                    android:layout_width="162dp"
+                    android:layout_width="172dp"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:singleLine="true"
@@ -159,7 +159,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="cm"
+                    android:text="m"
                     android:textSize="15dp"/>
             </LinearLayout>
         </FrameLayout>

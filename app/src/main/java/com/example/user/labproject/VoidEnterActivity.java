@@ -53,8 +53,8 @@ public class VoidEnterActivity extends Activity {
                 Intent intent = new Intent(getApplicationContext(), VoidGradeActivity.class);
 
 
-                if(isNumber(topigo.getText().toString()) && isNumber(packingThick.getText().toString()) && isNumber(crackDeep.getText().toString()) && isNumber(voidHeight.getText().toString()) && isNumber(voidWidth.getText().toString()) && isNumber(voidLength.getText().toString())) {
-                    if (voidHeight.getText().equals("")){
+                if(isNumber(topigo.getText().toString()) && isNumber(packingThick.getText().toString()) && isNumber(crackDeep.getText().toString()) && isNumber(voidWidth.getText().toString()) && isNumber(voidLength.getText().toString())) {
+                    if (voidHeight.getText().toString().equals("")){
                         intent.putExtra("voidHeight", "0");
                         intent.putExtra("topigo", topigo.getText().toString());
                         intent.putExtra("packingThick", packingThick.getText().toString());

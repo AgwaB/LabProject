@@ -56,9 +56,9 @@ public class VoidGradeActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                 intent.putExtra("WhereWereYou", "void");
-                intent.putExtra("Height", voidHeight*0.01);
-                intent.putExtra("Width",voidWidth*0.01);
-                intent.putExtra("Length",voidLength*0.01);
+                intent.putExtra("Height", voidHeight);
+                intent.putExtra("Width",voidWidth);
+                intent.putExtra("Length",voidLength);
                 intent.putExtra("stream",stream);
 
                 startActivity(intent);
