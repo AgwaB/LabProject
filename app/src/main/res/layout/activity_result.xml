@@ -153,10 +153,10 @@
                     android:textSize="15dp"/>
 
                 <TextView
+                    android:id="@+id/injectPressure"
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:text="7"
                     android:textSize="15dp" />
                 <TextView
                     android:layout_width="wrap_content"

@@ -40,7 +40,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="지표부 함몰"
+            android:text="비개착식 보강"
             android:textSize="25dp"
             android:gravity="center"/>
 
@@ -63,7 +63,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="지중 내 공동 발생"
+                android:text="개착식 보강"
                 android:textSize="25dp"
                 android:gravity="center"/>
 

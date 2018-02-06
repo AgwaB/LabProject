@@ -48,11 +48,14 @@
             android:textSize="25dp"
             android:text="Enter the States"/>
 
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"></View>
 
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="40dp"
             android:layout_gravity="center">
         <ImageView
             android:layout_width="wrap_content"
@@ -77,7 +80,7 @@
                 android:gravity="right"
                 android:singleLine="true"
                 android:lines="1"
-                android:maxLength="5"
+                android:maxLength="8"
                 android:background="@android:color/transparent" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -90,83 +93,7 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/longbutton" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical">
-                <TextView
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="포장두께 : "
-                    android:textSize="15dp"/>
-
-                <EditText
-                    android:id="@+id/packingThick"
-                    android:layout_width="175dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:singleLine="true"
-                    android:lines="1"
-                    android:maxLength="5"
-                    android:background="@android:color/transparent" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="m"
-                    android:textSize="15dp"/>
-            </LinearLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/longbutton" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical">
-                <TextView
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="포장층 균열깊이 : "
-                    android:textSize="15dp"/>
-
-                <EditText
-                    android:id="@+id/crackDeep"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:singleLine="true"
-                    android:lines="1"
-                    android:maxLength="5"
-                    android:background="@android:color/transparent" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="m"
-                    android:textSize="15dp"/>
-            </LinearLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="40dp"
             android:layout_gravity="center">
             <ImageView
                 android:layout_width="wrap_content"
@@ -191,7 +118,7 @@
                     android:gravity="right"
                     android:singleLine="true"
                     android:lines="1"
-                    android:maxLength="5"
+                    android:maxLength="8"
                     android:background="@android:color/transparent" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -204,45 +131,7 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/longbutton" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical">
-                <TextView
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="공동 높이 : "
-                    android:textSize="15dp"/>
-
-                <EditText
-                    android:id="@+id/voidHeight"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:singleLine="true"
-                    android:lines="1"
-                    android:maxLength="5"
-                    android:background="@android:color/transparent" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="m"
-                    android:textSize="15dp"/>
-            </LinearLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="40dp"
             android:layout_gravity="center">
             <ImageView
                 android:layout_width="wrap_content"
@@ -267,7 +156,7 @@
                     android:gravity="right"
                     android:singleLine="true"
                     android:lines="1"
-                    android:maxLength="5"
+                    android:maxLength="8"
                     android:background="@android:color/transparent" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -280,7 +169,7 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="40dp"
             android:layout_gravity="center">
             <ImageView
                 android:layout_width="wrap_content"
@@ -295,17 +184,17 @@
                     android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="지하수위치 : "
+                    android:text="지하수위치(지표하) : "
                     android:textSize="15dp"/>
 
                 <EditText
-                    android:layout_width="160dp"
+                    android:id="@+id/under_location"
+                    android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:singleLine="true"
-                    android:focusableInTouchMode="false"
                     android:lines="1"
-                    android:maxLength="5"
+                    android:maxLength="8"
                     android:background="@android:color/transparent" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -315,33 +204,6 @@
             </LinearLayout>
         </FrameLayout>
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/longbutton" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical">
-                <TextView
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="지하수 흐름 방향 : "
-                    android:textSize="15dp"/>
-                <Spinner
-                    android:id="@+id/spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                </Spinner>
-            </LinearLayout>
-        </FrameLayout>
 
 
     </LinearLayout>

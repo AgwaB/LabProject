@@ -16,9 +16,8 @@ import android.widget.Toast;
  */
 
 public class VoidEnterActivity extends Activity {
-    EditText topigo, packingThick, crackDeep, voidWidth, voidHeight, voidLength;
+    EditText topigo, voidWidth, voidLength, under_location;
     ImageView back, next;
-    Spinner spinner;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,19 +25,12 @@ public class VoidEnterActivity extends Activity {
         setContentView(R.layout.activity_void);
 
         topigo = (EditText)findViewById(R.id.topigo);
-        packingThick = (EditText)findViewById(R.id.packingThick);
-        crackDeep = (EditText)findViewById(R.id.crackDeep);
         voidWidth = (EditText)findViewById(R.id.voidWidth);
-        voidHeight = (EditText)findViewById(R.id.voidHeight);
         voidLength = (EditText)findViewById(R.id.voidLength);
+        under_location = (EditText)findViewById(R.id.under_location);
 
         back = (ImageView)findViewById(R.id.back);
         next = (ImageView)findViewById(R.id.next);
-
-        spinner = (Spinner)findViewById(R.id.spinner);
-        ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(this, R.array.stream, android.R.layout.simple_spinner_dropdown_item);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(arrayAdapter);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,35 +42,17 @@ public class VoidEnterActivity extends Activity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), VoidGradeActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
 
 
-                if(isNumber(topigo.getText().toString()) && isNumber(packingThick.getText().toString()) && isNumber(crackDeep.getText().toString()) && isNumber(voidWidth.getText().toString()) && isNumber(voidLength.getText().toString())) {
-                    if (voidHeight.getText().toString().equals("")){
-                        intent.putExtra("voidHeight", "0");
-                        intent.putExtra("topigo", topigo.getText().toString());
-                        intent.putExtra("packingThick", packingThick.getText().toString());
-                        intent.putExtra("crackDeep", crackDeep.getText().toString());
-                        intent.putExtra("voidWidth", voidWidth.getText().toString());
-                        intent.putExtra("voidLength", voidLength.getText().toString());
-                        intent.putExtra("stream", spinner.getSelectedItem().toString());
-                        startActivity(intent);
-                    } else{
-                        if(isNumber(voidHeight.getText().toString())){
-                            intent.putExtra("voidHeight", voidHeight.getText().toString());
-                            intent.putExtra("topigo", topigo.getText().toString());
-                            intent.putExtra("packingThick", packingThick.getText().toString());
-                            intent.putExtra("crackDeep", crackDeep.getText().toString());
-                            intent.putExtra("voidWidth", voidWidth.getText().toString());
-                            intent.putExtra("voidLength", voidLength.getText().toString());
-                            intent.putExtra("stream", spinner.getSelectedItem().toString());
+                if(isNumber(topigo.getText().toString())  &&  isNumber(voidWidth.getText().toString()) && isNumber(voidLength.getText().toString()) && isNumber(under_location.getText().toString())) {
+                            intent.putExtra("WhereWereYou", "void");
+                            intent.putExtra("topigo", Double.parseDouble(topigo.getText().toString()));
+                            intent.putExtra("Width", Double.parseDouble(voidWidth.getText().toString()));
+                            intent.putExtra("Length", Double.parseDouble(voidLength.getText().toString()));
+                            intent.putExtra("under_location", Double.parseDouble(under_location.getText().toString()));
                             startActivity(intent);
-                        }
                     }
-
-                }
-
-
             }
         });
 
