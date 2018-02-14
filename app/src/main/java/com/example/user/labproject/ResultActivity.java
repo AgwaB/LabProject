@@ -74,6 +74,12 @@ public class ResultActivity extends Activity {
             txt_time_hour.setText(Integer.toString((int)time_hour));
             txt_time_min.setText(Integer.toString((int)Math.ceil(time_min)));
 
+            if(length>width)
+                txt_injectPressure.setText(Integer.toString(getBar(4, length)));
+            else
+                txt_injectPressure.setText(Integer.toString(getBar(4, width)));
+
+
                 img_location.setBackgroundResource(R.mipmap.result_sink);
         }
 
@@ -113,6 +119,10 @@ public class ResultActivity extends Activity {
             time_hour = (int)(time_min/60);
             time_min = time_min - (60*time_hour);
 
+            if(length>width)
+                txt_injectPressure.setText(Integer.toString(getBar(Integer.parseInt(txt_injectNum.getText().toString()), length)));
+            else
+                txt_injectPressure.setText(Integer.toString(getBar(Integer.parseInt(txt_injectNum.getText().toString()), width)));
 
             txt_pouchNum.setText(Integer.toString((int)Math.ceil(pouchNum)));
             txt_time_hour.setText(Integer.toString((int)time_hour));
@@ -135,6 +145,18 @@ public class ResultActivity extends Activity {
     }
     private double getTime(double volume, int injectNum){
         return ((volume * 20) / 0.1) / (double)injectNum;
+    }
+    private int getBar(int injectNum, double L){
+        double bar;
+        if(injectNum == 2){
+            bar = 13.913*(L/2) - 1.827;
+            return (int)bar;
+        }
+        else if(injectNum == 4){
+            bar = 15.141*L - 0.8754;
+            return (int)bar;
+        }
+        return 0;
     }
 
 }
