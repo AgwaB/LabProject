@@ -16,7 +16,7 @@ import android.widget.Toast;
  */
 
 public class VoidEnterActivity extends Activity {
-    EditText topigo, voidWidth, voidLength, under_location;
+    EditText topigo, voidHeight, voidWidth, voidLength, under_location;
     ImageView back, next;
 
     @Override
@@ -25,6 +25,7 @@ public class VoidEnterActivity extends Activity {
         setContentView(R.layout.activity_void);
 
         topigo = (EditText)findViewById(R.id.topigo);
+        voidHeight = (EditText)findViewById(R.id.voidHeight);
         voidWidth = (EditText)findViewById(R.id.voidWidth);
         voidLength = (EditText)findViewById(R.id.voidLength);
         under_location = (EditText)findViewById(R.id.under_location);
@@ -46,13 +47,17 @@ public class VoidEnterActivity extends Activity {
 
 
                 if(isNumber(topigo.getText().toString())  &&  isNumber(voidWidth.getText().toString()) && isNumber(voidLength.getText().toString()) && isNumber(under_location.getText().toString())) {
-                            intent.putExtra("WhereWereYou", "void");
-                            intent.putExtra("topigo", Double.parseDouble(topigo.getText().toString()));
-                            intent.putExtra("Width", Double.parseDouble(voidWidth.getText().toString()));
-                            intent.putExtra("Length", Double.parseDouble(voidLength.getText().toString()));
-                            intent.putExtra("under_location", Double.parseDouble(under_location.getText().toString()));
-                            startActivity(intent);
+                    intent.putExtra("WhereWereYou", "void");
+                    intent.putExtra("topigo", Double.parseDouble(topigo.getText().toString()));
+                    intent.putExtra("Height", Double.parseDouble(voidLength.getText().toString()));
+                    intent.putExtra("Width", Double.parseDouble(voidWidth.getText().toString()));
+                    intent.putExtra("Length", Double.parseDouble(voidLength.getText().toString()));
+                    intent.putExtra("under_location", Double.parseDouble(under_location.getText().toString()));
+                    if(voidHeight.getText().toString().equals("")){
+                        intent.putExtra("Height", Double.parseDouble(voidLength.getText().toString())*(0.8));
                     }
+                    startActivity(intent);
+                }
             }
         });
 

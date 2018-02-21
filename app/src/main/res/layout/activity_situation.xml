@@ -22,29 +22,29 @@
             android:text="지반상태를 선택하세요."/>
 
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginBottom="60dp">
-
-        <ImageButton
-            android:id="@+id/to_activity_sink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/shallowbutton"
-            android:layout_gravity="center"
-            android:scaleType="fitXY"
-            android:padding="0dp">
-
-        </ImageButton>
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="비개착식 보강"
-            android:textSize="25dp"
-            android:gravity="center"/>
+            android:layout_height="80dp"
+            android:layout_marginBottom="60dp">
 
-    </FrameLayout>
+            <ImageButton
+                android:id="@+id/to_activity_sink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/shallowbutton"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:padding="0dp">
+
+            </ImageButton>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="비개착식 보강"
+                android:textSize="25dp"
+                android:gravity="center"/>
+
+        </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"

@@ -26,7 +26,7 @@ public class SelectSituationActivity extends Activity {
         sink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),SinkEnterActivity.class);
+                Intent intent = new Intent(getApplicationContext(),VoidEnterActivity.class);
                 startActivity(intent);
             }
         });
@@ -34,7 +34,7 @@ public class SelectSituationActivity extends Activity {
         Void.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),VoidEnterActivity.class);
+                Intent intent = new Intent(getApplicationContext(),SinkEnterActivity.class);
                 startActivity(intent);
             }
         });

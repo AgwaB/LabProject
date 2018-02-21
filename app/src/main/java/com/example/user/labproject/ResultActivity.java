@@ -55,9 +55,6 @@ public class ResultActivity extends Activity {
             width = intent.getDoubleExtra("Width", 0.0);
             length = intent.getDoubleExtra("Length", 0.0);
 
-            if(height == 0)
-                volume = getVolume(width, length)/2;
-            else
                 volume = getVolume(height, width, length)/2;
 
             pouchNum = getPouch(volume, 4);
@@ -85,11 +82,12 @@ public class ResultActivity extends Activity {
 
         if(intent.getStringExtra("WhereWereYou").equals("void")) {
             topigo = intent.getDoubleExtra("topigo",0.0);
+            height = intent.getDoubleExtra("Height",0.0);
             width = intent.getDoubleExtra("Width", 0.0);
             length = intent.getDoubleExtra("Length", 0.0);
             under_location = intent.getDoubleExtra("under_location",0.0);
 
-            volume = getVolume(width, length);
+            volume = getVolume(height, width, length);
 
             if((width*1.2 > length) || (length*1.2 > width)){
                 txt_punch_location.setText("가장자리");
@@ -122,7 +120,7 @@ public class ResultActivity extends Activity {
             if(length>width)
                 txt_injectPressure.setText(Integer.toString(getBar(Integer.parseInt(txt_injectNum.getText().toString()), length)));
             else
-                txt_injectPressure.setText(Integer.toString(getBar(Integer.parseInt(txt_injectNum.getText().toString()), width)));
+                txt_injectPressure.setText(Integer.toString( getBar(Integer.parseInt(txt_injectNum.getText().toString()), width)));
 
             txt_pouchNum.setText(Integer.toString((int)Math.ceil(pouchNum)));
             txt_time_hour.setText(Integer.toString((int)time_hour));
@@ -150,10 +148,18 @@ public class ResultActivity extends Activity {
         double bar;
         if(injectNum == 2){
             bar = 13.913*(L/2) - 1.827;
+            if(bar<3)
+                bar=3;
+            if(bar>7)
+                bar=6;
             return (int)bar;
         }
         else if(injectNum == 4){
             bar = 15.141*L - 0.8754;
+            if(bar<3)
+                bar=3;
+            if(bar>7)
+                bar=6;
             return (int)bar;
         }
         return 0;

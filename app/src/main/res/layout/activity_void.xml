@@ -57,31 +57,69 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
             android:layout_gravity="center">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/longbutton" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/longbutton" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical">
-            <TextView
-                android:layout_marginLeft="20dp"
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="토피고 : "
+                    android:textSize="15dp"/>
+
+                <EditText
+                    android:id="@+id/topigo"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:lines="1"
+                    android:maxLength="8"
+                    android:background="@android:color/transparent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="m"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_gravity="center">
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="토피고 : "
-                android:textSize="15dp"/>
+                android:src="@mipmap/longbutton" />
 
-            <EditText
-                android:id="@+id/topigo"
-                android:layout_width="190dp"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:singleLine="true"
-                android:lines="1"
-                android:maxLength="8"
-                android:background="@android:color/transparent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical">
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="공동 높이 : "
+                    android:textSize="15dp"/>
+
+                <EditText
+                    android:id="@+id/voidHeight"
+                    android:layout_width="172dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:lines="1"
+                    android:maxLength="8"
+                    android:background="@android:color/transparent" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
